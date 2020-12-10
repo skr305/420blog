@@ -58,11 +58,6 @@ public class Result {
     }
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 64068edade761ec38af79eac8929efa556eeedec
     public int getCode() {
         return code;
     }
