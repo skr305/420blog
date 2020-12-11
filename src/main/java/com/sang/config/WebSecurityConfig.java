@@ -38,7 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //formLogin指表单登录，可以通过.loginPage("/请求")来自定义“/登录”页面
                 .formLogin()
-                .loginPage("/loginPage")
                 .loginProcessingUrl("/login")
                 .successHandler(new AuthenticationSuccessHandler() {
                     @Override
