@@ -13,7 +13,7 @@ class DemoApplicationTests {
     UserService userService;
     @Test
     void contextLoads() {
-        userService.insert("admin",new BCryptPasswordEncoder().encode("admin"));
+        userService.insert("admin1111111111111111111111",new BCryptPasswordEncoder().encode("admin"));
         System.out.println(userService.loadUserByUsername("admin"));
     }
 
