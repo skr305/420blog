@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
@@ -28,7 +29,7 @@ public class UserController {
      */
     @PostMapping(value = {"/register"})
     @ResponseBody
-    public String register(String username,String password) throws JsonProcessingException {
+    public String register(String username, String password) throws JsonProcessingException {
         int result = 0;
         String json="";
         ObjectMapper objectMapper = new ObjectMapper();
