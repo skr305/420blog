@@ -2,7 +2,8 @@
 SQLyog Ultimate v12.09 (64 bit)
 MySQL - 8.0.17 : Database - blog
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -33,7 +34,7 @@ CREATE TABLE `blogs` (
 DROP TABLE IF EXISTS `user_password`;
 
 CREATE TABLE `user_password` (
-  `name` varchar(20) NOT NULL COMMENT '用户名，唯一标识',
+  `username` varchar(20) NOT NULL COMMENT '用户名，唯一标识',
   `password` varchar(20) DEFAULT NULL COMMENT '用户密码',
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

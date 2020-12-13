@@ -58,8 +58,6 @@ public class Result {
     }
 
 
-
-
     public int getCode() {
         return code;
     }
