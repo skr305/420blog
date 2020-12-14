@@ -34,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/","/loginPage","/register").permitAll()//允许所有人访问
+                .antMatchers("/","/loginPage","/register","/community/**").permitAll()//允许所有人访问
                 .anyRequest().authenticated()
                 .and()
                 //formLogin指表单登录，可以通过.loginPage("/请求")来自定义“/登录”页面

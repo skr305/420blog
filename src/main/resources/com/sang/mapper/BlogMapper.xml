@@ -3,8 +3,31 @@
 <mapper namespace="com.sang.mapper.BlogMapper">
 
 
-    <select id="getBlogsByPage" resultType="Blog">
-        select * from blogs limit #{firstOne},#{number}
+    <select id="getCommunityAllBlogs" resultType="Blog">
+        select * from blogs where visible = 1
+        <if test="type == 1 || type == 0">
+            and type = #{type}
+        </if>
+        limit #{firstOne},#{number}
+    </select>
+
+    <select id="getCommunityUserBlogs" resultType="Blog">
+        select * from blogs where username = #{username} and visible = 1
+        <if test="type == 1 || type == 0">
+            and type = #{type}
+        </if>
+        limit #{firstOne},#{number}
+    </select>
+
+    <select id="getUserCenterAllBlogs" resultType="Blog">
+        select * from blogs where username = #{username}
+        <if test="type == 1 || type == 0">
+            and type = #{type}
+        </if>
+        <if test="visible == 1 || visible == 0">
+            and visible = #{visible}
+        </if>
+        limit #{firstOne},#{number}
     </select>
 
 </mapper>

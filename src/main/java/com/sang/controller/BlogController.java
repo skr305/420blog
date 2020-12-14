@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -16,15 +17,55 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
 
-    @RequestMapping("/index")
-    public String getBlogByPage(int page) throws JsonProcessingException {
-        Result result = blogService.getBlogByPage(page);
+    ObjectMapper mapper = new ObjectMapper();
+    String json;
+    Result result;
+
+    @RequestMapping("/community/allBlogs")
+    public String getCommunityAllBlogs(int page,int type) throws JsonProcessingException {
+        try{
+            result = blogService.getCommunityAllBlogs(page,type);
+
+        }catch (Exception e){
+            result = new Result(-1,"服务器错误",null);
+        }
         //jackson
         ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(result);
+        json = mapper.writeValueAsString(result);
 
         return json;
     }
 
+    @RequestMapping("/community/userBlogs")
+    public String getCommunityUserBlogs(int page,String username,int type) throws JsonProcessingException {
+        try{
+            result = blogService.getCommunityUserBlogs(page,username,type);
+
+        }catch (Exception e){
+            result = new Result(-1,"服务器错误",null);
+        }
+        //jackson
+        ObjectMapper mapper = new ObjectMapper();
+        json = mapper.writeValueAsString(result);
+
+        return json;
+    }
+
+    @RequestMapping("userCenter/allBlogs")
+    public String getUserCenterAllBlogs(int page, int type, int visible, HttpSession session) throws JsonProcessingException {
+        try{
+            String username = (String)session.getAttribute("username");
+            System.out.print("sfsd"+username);
+            result = blogService.getUserCenterAllBlogs(page,type,visible,username);
+
+        }catch (Exception e){
+            result = new Result(-1,"服务器错误",null);
+        }
+        //jackson
+        ObjectMapper mapper = new ObjectMapper();
+        json = mapper.writeValueAsString(result);
+
+        return json;
+    }
 
 }
