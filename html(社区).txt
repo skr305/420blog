@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一次尝试（社区）</title>
+    <style>
+        @import "第一次尝试（社区）.css";
+    </style>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="第一次尝试（社区）.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="first">
+        <div class="first-1">
+            <img src="photo/logo.png" width="200px" height="70px">
+        </div>
+        <div class="first-2">
+            <form action="" class="search" id="search">
+                <input type="text" id="search-text" class="search-text" placeholder="请输入您要搜索的内容...">
+                <button type="submit" id="search-button" class="search-button"></button>
+            </form>
+        </div>
+        <div class="first-3">
+            <ul class="menu">
+                <li><a href="#"><h4><img src="./photo/创造中心.png">创作中心</h4></a>
+                    <ul class="submenu">
+                        <li><a href="#"><h5>mark笔记</h5></a></li>
+                        <li><a href="#"><h5>思维导图</h5></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="first-4">
+            <h4>收藏</h4>
+        </div>
+        <div class="first-5">
+            <ul class="menu">
+                <li><a href="#"><h3><img src="photo/头像.png" width="36px" height="36px">个人</h3></a>
+                    <ul class="submenu">
+                        <li><a href="#"><h5>我的关注</h5></a></li>
+                        <li><a href="#"><h5>我的收藏</h5></a></li>
+                        <li><a href="#"><h5>个人中心</h5></a></li>
+                        <li><a href="#"><h5>账号设置</h5></a></li>
+                        <li><a href="#"><h5>帮助</h5></a></li>
+                        <li><a href="#"><h5>退出</h5></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="second">
+            <button type="button" id="toggle1" class="toggle1" style="display: block"><img class="left" src="photo/向左.png"></button>
+            <div class="second-1">
+                <nav class="mainNav">
+                    <ul class="tab">
+                        <li id="tabId1" class="current" onclick="tab('tabId1','tabC1')"><a data-title="全部" >全部</a></li>
+                        <li id="tabId2" onclick="tab('tabId2','tabC2')"><a data-title="markdown">markdown</a></li>
+                        <li id="tabId3" onclick="tab('tabId3','tabC3')"><a data-title="思维导图">思维导图</a></li>
+                        <li id="tabId4" onclick="tab('tabId4','tabC4')"><a data-title="其他">其他</a></li>
+                        <li id="tabId5" onclick="tab('tabId5','tabC5')"><a data-title="热门">热门</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <button type="button" id="toggle2" class="toggle2" style="display: none"><img class="right" src="photo/向右.png"></button>
+        </div>
+        <div class="third" id="third">
+            <div class="show" id="tabC1">
+                <div class="con">
+                    <div class="all">
+                        <div class="personal">
+                            <img src="photo/头像.png" width="60px" height="60px">
+                            <p class="name"><a href="#">安会海</a></p>
+                            <p class="time">12月18日09:30</p>
+                        </div>
+                        <div class="dots" onclick="this.classList.toggle('active');">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="container cut">
+                                <div class="drop cut2"></div>
+                            </div>
+                            <div class="list">
+                                <ul>
+                                    <li id="attention" onmouseover="change0_1()" onmouseleave="change0_0()">
+                                        <img src="photo/未关注.png" id="no_attention" width="25px" height="25px">
+                                        <img src="photo/已关注.png" id="al_attention" width="25px" height="25px" style="display: none">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;关注
+                                    </li>
+                                    <li id="collection" onmouseover="change1_1()" onmouseleave="change1_0()">
+                                        <img src="photo/未收藏.png" id="no_collection" width="25px" height="25px">
+                                        <img src="photo/已收藏.png" id="al_collection" width="25px" height="25px" style="display: none">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;收藏
+                                    </li>
+                                    <li class="hide" onmouseover="change2_1()" onmouseleave="change2_0()">
+                                        <img src="photo/未隐藏.png" id="no_hide" width="35px" height="34px">
+                                        <img src="photo/已隐藏.png" id="al_hide" width="28px" height="22px" style="display: none">
+                                        &nbsp;&nbsp;&nbsp;隐藏
+                                    </li>
+                                    <li class="report" onmouseover="change3_1()" onmouseleave="change3_0()">
+                                        <img src="photo/未举报.png" id="no_report" width="25px" height="25px">
+                                        <img src="photo/已举报.png" id="al_report" width="25px" height="22px" style="display: none">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;举报
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="substance">
+                            <div class="substance1"></div>
+                        </div>
+                        <button class="praise" x-data="{
+                                          state: 'Unliked',
+                                          usedKeyboard: false,
+                                          async updateState(to) {
+                                              this.state = 'Saving'
+                                              await new Promise(resolve => setTimeout(resolve, 1000))
+                                              this.state = to
+                                          }
+                                        }"
+                                :class="{
+                                          'like unliked': state === 'Unliked',
+                                          'like saving': state === 'Saving',
+                                          'like liked': state === 'Liked',
+                                          'focus:outline-none': !usedKeyboard
+                                        }"
+                                @click="updateState(state === 'Unliked' ? 'Liked' : 'Unliked')" @keydown.window.tab="usedKeyboard = true">
+                            <span class="like-icon like-icon-state" aria-label="state" x-text="state" aria-live="polite">Unliked</span>
+                        </button>
+                    </div>
+                    <div class="all">
+                        all
+                    </div>
+                    <div class="all">
+                        all
+                    </div>
+                    <div class="all">
+                        all
+                    </div>
+                    <div class="all">
+                        all
+                    </div>
+                    <div class="all">
+                        all
+                    </div>
+                    <div class="all">
+                        all
+                    </div>
+                    <div class="all">
+                        all
+                    </div>
+                </div>
+            </div>
+            <div class="hidden" id="tabC2"><div class="con">生活</div>
+            </div>
+            <div class="hidden" id="tabC3"><div class="con">摄影</div>
+            </div>
+            <div class="hidden" id="tabC4"><div class="con">游戏</div>
+            </div>
+            <div class="hidden" id="tabC5"><div class="con">其他</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#toggle1').click(function(){
+                $('.second-1').animate({width:'toggle'},350);
+                document.getElementById("toggle1").style.display = "none";
+                document.getElementById("toggle2").style.display = "block";
+                document.getElementById("third").style.margin = "64px 0 50px -100px";
+                document.getElementById("tabC1").style.border = "3px solid red";
+                document.getElementById("tabC2").style.border = "3px solid red";
+                document.getElementById("tabC3").style.border = "3px solid red";
+                document.getElementById("tabC4").style.border = "3px solid red";
+                document.getElementById("tabC5").style.border = "3px solid red";
+            });
+        });
+        $(document).ready(function(){
+            $('#toggle2').click(function(){
+                $('.second-1').animate({width:'toggle'},350);
+                document.getElementById("toggle1").style.display = "block";
+                document.getElementById("toggle2").style.display = "none";
+                document.getElementById("third").style.margin = "64px 0 50px -55px";
+                document.getElementById("tabC1").style.borderStyle = "solid";
+                document.getElementById("tabC1").style.borderWidth = "3px 3px 3px 0px";
+                document.getElementById("tabC1").style.borderColor = "red";
+                document.getElementById("tabC2").style.borderStyle = "solid";
+                document.getElementById("tabC2").style.borderWidth = "3px 3px 3px 0px";
+                document.getElementById("tabC2").style.borderColor = "red";
+                document.getElementById("tabC3").style.borderStyle = "solid";
+                document.getElementById("tabC3").style.borderWidth = "3px 3px 3px 0px";
+                document.getElementById("tabC3").style.borderColor = "red";
+                document.getElementById("tabC4").style.borderStyle = "solid";
+                document.getElementById("tabC4").style.borderWidth = "3px 3px 3px 0px";
+                document.getElementById("tabC4").style.borderColor = "red";
+                document.getElementById("tabC5").style.borderStyle = "solid";
+                document.getElementById("tabC5").style.borderWidth = "3px 3px 3px 0px";
+                document.getElementById("tabC5").style.borderColor = "red";
+            });
+        });
+    </script>
+</body>
+</html>
