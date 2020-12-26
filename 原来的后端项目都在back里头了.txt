@@ -1,0 +1,18 @@
+前端是front 后端是back
+前端里头有对应的测试工具
+可以测试后端接口在axios request下的表现
+在src/main.js下
+有什么不明白的可以直接找我
+
+
+2.to 会海
+可以把那个社区代码拷到src/components/mainPage下
+具体拷贝方式如下:
+template里头放 html代码
+style里放css代码
+script里放 js代码
+
+html上的onclick改成对应的@click
+        对应的回调函数写在export default { .. 的method里头
+	mainPage里头有例子 可以照着那个做
+
