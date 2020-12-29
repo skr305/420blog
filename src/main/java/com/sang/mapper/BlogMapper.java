@@ -15,7 +15,6 @@ public interface BlogMapper {
 
     List<Blog> getCommunityUserBlogs(@Param("firstOne") int firstOne,@Param("number") int number,@Param("username") String username,@Param("type") int type);
 
-    List<Blog> getUserCenterAllBlogs(@Param("firstOne") int firstOne, @Param("number") int number,
-                                     @Param("type") int type, @Param("visible") int visible,
+    List<Blog> getUserCenterAllBlogs(@Param("type") int type, @Param("visible") int visible,
                                      @Param("username") String username);
 }

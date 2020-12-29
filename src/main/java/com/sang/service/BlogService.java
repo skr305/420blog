@@ -23,8 +23,8 @@ public class BlogService {
         return new Result(0,"success!!",blogs);
     }
 
-    public Result getUserCenterAllBlogs(int page,int type,int visible,String username){
-        List<Blog> blogs = blogMapper.getUserCenterAllBlogs((page-1)*Blog.onePageNumber,Blog.onePageNumber,type,visible,username);
+    public Result getUserCenterAllBlogs(int type,int visible,String username){
+        List<Blog> blogs = blogMapper.getUserCenterAllBlogs(type,visible,username);
         return Result.success(blogs);
     }
 }

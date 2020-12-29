@@ -13,6 +13,7 @@ public class Blog {
     private int type;
     private String description;
     private int visible;
+    private String id;
 
     //设置一页的显示数量
     final public static int onePageNumber = 10;

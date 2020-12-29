@@ -27,7 +27,6 @@
         <if test="visible == 1 || visible == 0">
             and visible = #{visible}
         </if>
-        limit #{firstOne},#{number}
     </select>
 
 </mapper>

@@ -52,11 +52,11 @@ public class BlogController {
     }
 
     @RequestMapping("userCenter/allBlogs")
-    public String getUserCenterAllBlogs(int page, int type, int visible, HttpSession session) throws JsonProcessingException {
+    public String getUserCenterAllBlogs(int type, int visible, HttpSession session) throws JsonProcessingException {
         try{
             String username = (String)session.getAttribute("username");
             System.out.print("sfsd"+username);
-            result = blogService.getUserCenterAllBlogs(page,type,visible,username);
+            result = blogService.getUserCenterAllBlogs(type,visible,username);
 
         }catch (Exception e){
             result = new Result(-1,"服务器错误",null);
