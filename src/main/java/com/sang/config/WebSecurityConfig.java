@@ -60,7 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
                         String json="";
                         ObjectMapper objectMapper = new ObjectMapper();
-                        json = objectMapper.writeValueAsString(new Result(1,"登陆失败!",null));
+                        json = objectMapper.writeValueAsString(new Result(1,"failure!",null));
                         PrintWriter printWriter = httpServletResponse.getWriter();
                         printWriter.print(json);
                         printWriter.flush();

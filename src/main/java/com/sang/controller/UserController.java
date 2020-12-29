@@ -2,20 +2,14 @@ package com.sang.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sang.po.User;
 import com.sang.service.UserService;
-import com.sang.util.MySQLException;
 import com.sang.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpSession;
-import java.sql.SQLDataException;
-import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 @Controller
@@ -29,7 +23,7 @@ public class UserController {
      */
     @PostMapping(value = {"/register"})
     @ResponseBody
-    public String register(String username, String password) throws JsonProcessingException {
+    public String register(String username,String password) throws JsonProcessingException {
         int result = 0;
         String json="";
         ObjectMapper objectMapper = new ObjectMapper();

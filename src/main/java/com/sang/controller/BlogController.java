@@ -55,7 +55,6 @@ public class BlogController {
     public String getUserCenterAllBlogs(int type, int visible, HttpSession session) throws JsonProcessingException {
         try{
             String username = (String)session.getAttribute("username");
-            System.out.print("sfsd"+username);
             result = blogService.getUserCenterAllBlogs(type,visible,username);
 
         }catch (Exception e){
@@ -68,4 +67,49 @@ public class BlogController {
         return json;
     }
 
+    //个人中心添加博客
+    @RequestMapping("userCenter/addBlog")
+    public String addBlog(String id,String content,int type,int visible,String description,HttpSession session) throws JsonProcessingException {
+        try{
+            String username = (String)session.getAttribute("username");
+            result = blogService.addBlog(id,content,username,type,visible,description);
+        }catch (Exception e){
+            result = new Result(-1,"服务器错误",null);
+        }
+        //jackson
+        ObjectMapper mapper = new ObjectMapper();
+        json = mapper.writeValueAsString(result);
+
+        return json;
+    }
+
+    //个人中心删除博客
+    @RequestMapping("userCenter/deleteBlog")
+    public String deleteBlogById(String id) throws JsonProcessingException {
+        try{
+            result = blogService.deleteBlogById(id);
+        }catch (Exception e){
+            result = new Result(-1,"服务器错误",null);
+        }
+        //jackson
+        ObjectMapper mapper = new ObjectMapper();
+        json = mapper.writeValueAsString(result);
+
+        return json;
+    }
+
+    //个人中心修改博客
+    @RequestMapping("userCenter/updateBlog")
+    public String updateBlogById(String id,String content,int type,int visible,String description) throws JsonProcessingException {
+        try{
+            result = blogService.updateBlogById(id,content,type,visible,description);
+        }catch (Exception e){
+            result = new Result(-1,"服务器错误",null);
+        }
+        //jackson
+        ObjectMapper mapper = new ObjectMapper();
+        json = mapper.writeValueAsString(result);
+
+        return json;
+    }
 }
