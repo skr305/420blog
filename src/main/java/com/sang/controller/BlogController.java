@@ -3,10 +3,13 @@ package com.sang.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sang.po.Blog;
+import com.sang.pojo.Infos;
 import com.sang.service.BlogService;
 import com.sang.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
@@ -22,9 +25,10 @@ public class BlogController {
     Result result;
 
     @RequestMapping("/community/allBlogs")
-    public String getCommunityAllBlogs(int page,int type) throws JsonProcessingException {
+
+    public String getCommunityAllBlogs(@RequestBody Infos infos) throws JsonProcessingException {
         try{
-            result = blogService.getCommunityAllBlogs(page,type);
+            result = blogService.getCommunityAllBlogs(infos.getType(), infos.getPage());
 
         }catch (Exception e){
             result = new Result(-1,"服务器错误",null);
@@ -37,9 +41,9 @@ public class BlogController {
     }
 
     @RequestMapping("/community/userBlogs")
-    public String getCommunityUserBlogs(int page,String username,int type) throws JsonProcessingException {
+    public String getCommunityUserBlogs(@RequestBody Infos infos) throws JsonProcessingException {
         try{
-            result = blogService.getCommunityUserBlogs(page,username,type);
+            result = blogService.getCommunityUserBlogs(infos.getPage(),infos.getUsername(),infos.getType());
 
         }catch (Exception e){
             result = new Result(-1,"服务器错误",null);
@@ -52,10 +56,10 @@ public class BlogController {
     }
 
     @RequestMapping("userCenter/allBlogs")
-    public String getUserCenterAllBlogs(int type, int visible, HttpSession session) throws JsonProcessingException {
+    public String getUserCenterAllBlogs(@RequestBody Infos infos, HttpSession session) throws JsonProcessingException {
         try{
             String username = (String)session.getAttribute("username");
-            result = blogService.getUserCenterAllBlogs(type,visible,username);
+            result = blogService.getUserCenterAllBlogs(infos.getType(),infos.getVisible(),username);
 
         }catch (Exception e){
             result = new Result(-1,"服务器错误",null);
@@ -69,10 +73,10 @@ public class BlogController {
 
     //个人中心添加博客
     @RequestMapping("userCenter/addBlog")
-    public String addBlog(String id,String content,int type,int visible,String description,HttpSession session) throws JsonProcessingException {
+    public String addBlog(@RequestBody Infos infos,HttpSession session) throws JsonProcessingException {
         try{
             String username = (String)session.getAttribute("username");
-            result = blogService.addBlog(id,content,username,type,visible,description);
+            result = blogService.addBlog(infos.getId(),infos.getContent(),username,infos.getType(),infos.getVisible(),infos.getDescription());
         }catch (Exception e){
             result = new Result(-1,"服务器错误",null);
         }
@@ -85,9 +89,9 @@ public class BlogController {
 
     //个人中心删除博客
     @RequestMapping("userCenter/deleteBlog")
-    public String deleteBlogById(String id) throws JsonProcessingException {
+    public String deleteBlogById(@RequestBody Infos infos) throws JsonProcessingException {
         try{
-            result = blogService.deleteBlogById(id);
+            result = blogService.deleteBlogById(infos.getId());
         }catch (Exception e){
             result = new Result(-1,"服务器错误",null);
         }
@@ -100,9 +104,9 @@ public class BlogController {
 
     //个人中心修改博客
     @RequestMapping("userCenter/updateBlog")
-    public String updateBlogById(String id,String content,int type,int visible,String description) throws JsonProcessingException {
+    public String updateBlogById(@RequestBody Infos infos) throws JsonProcessingException {
         try{
-            result = blogService.updateBlogById(id,content,type,visible,description);
+            result = blogService.updateBlogById(infos.getId(),infos.getContent(),infos.getType(),infos.getVisible(),infos.getDescription());
         }catch (Exception e){
             result = new Result(-1,"服务器错误",null);
         }
