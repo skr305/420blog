@@ -3,7 +3,7 @@
   <div @click="hello()">
     <div class="first">
       <div class="first-1">
-        <img src="photo/logo.png" width="200px" height="70px">
+        <img src="./photo/logo.png" width="200px" height="78px">
       </div>
       <div class="first-2">
         <form action="" class="search" id="search">
@@ -13,7 +13,7 @@
       </div>
       <div class="first-3">
         <ul class="menu">
-          <li><a href="#"><h4><img src="./photo/创造中心.png">创作中心</h4></a>
+          <li><a href="#"><h4><img src="./photo/创造中心.png" width="36px" height="36px">创作中心</h4></a>
             <ul class="submenu">
               <li><a href="#"><h5>mark笔记</h5></a></li>
               <li><a href="#"><h5>思维导图</h5></a></li>
@@ -22,11 +22,18 @@
         </ul>
       </div>
       <div class="first-4">
-        <h4>收藏</h4>
+        <ul class="menu">
+          <li><a href="#"><h3><img src="./photo/个人收藏.png" width="36px" height="36px">&nbsp;收藏</h3></a>
+<!--            <ul class="submenu">-->
+<!--              <li><a href="#"><h5>mark笔记</h5></a></li>-->
+<!--              <li><a href="#"><h5>思维导图</h5></a></li>-->
+<!--            </ul>-->
+          </li>
+        </ul>
       </div>
       <div class="first-5">
         <ul class="menu">
-          <li><a href="#"><h3><img src="photo/头像.png" width="36px" height="36px">个人</h3></a>
+          <li><a href="#"><h3><img src="./photo/头像.png" width="36px" height="36px">&nbsp;个人</h3></a>
             <ul class="submenu">
               <li><a href="#"><h5>我的关注</h5></a></li>
               <li><a href="#"><h5>我的收藏</h5></a></li>
@@ -39,10 +46,43 @@
         </ul>
       </div>
     </div>
+    <div class="middle" style="width: 100%;height: 100px;">
+      <div class="all_cat">
+        <div class="cat"><img src="./photo/cc.png"/>
+          <div class="eyelids"></div>
+          <div class="eye left">
+            <div class="eyeWatch">
+              <div class="glare"></div>
+            </div>
+          </div>
+          <div class="eye right">
+            <div class="eyeWatch">
+              <div class="glare"></div>
+            </div>
+          </div>
+          <div class="nose"></div>
+          <div class="claws c1"></div>
+          <div class="claws c2"></div>
+          <div class="claws c3"></div>
+          <div class="claws c4"></div>
+          <div class="claws c5"></div>
+          <div class="claws c6"></div>
+        </div>
+        <div class="ballContainer">
+          <div class="ballShadow">
+            <div class="ball"></div>
+          </div>
+        </div>
+        <div class="ears">
+          <div class="ear eLeft"></div>
+          <div class="ear eRight"></div>
+        </div>
+      </div>
+    </div>
     <div class="main">
       <div class="second">
-        <button type="button" id="toggle1" class="toggle1" style="display: block"><img class="left" src="photo/向左.png"></button>
-        <div class="second-1">
+        <button type="button" @click="chan1()" id="toggle1" class="toggle1" style="display: block"><img class="left" src="./photo/向左.png"></button>
+        <div class="second-1" id="second-1">
           <nav class="mainNav">
             <ul class="tab">
               <li id="tabId1" class="current" @click="tab('tabId1','tabC1')"><a data-title="全部" >全部</a></li>
@@ -53,70 +93,63 @@
             </ul>
           </nav>
         </div>
-        <button type="button" id="toggle2" class="toggle2" style="display: none"><img class="right" src="photo/向右.png"></button>
+        <button type="button" @click="chan2()" id="toggle2" class="toggle2" style="display: none"><img class="right" src="./photo/向右.png"></button>
       </div>
       <div class="third" id="third">
         <div class="show" id="tabC1">
-          <div class="con">
-            <div class="all">
+          <div class="con1">
+            <div class="all_first">
               <div class="personal">
-                <img src="photo/头像.png" width="60px" height="60px">
+                <a href="#"><img src="./photo/头像.png" width="60px" height="60px"></a>
                 <p class="name"><a href="#">安会海</a></p>
                 <p class="time">12月18日09:30</p>
               </div>
-              <div class="dots" @click="this.classList.toggle('active');">
+              <div class="dots" onclick="this.classList.toggle('active');">
                 <div class="dot"></div>
                 <div class="dot"></div>
+                <div class="shadow cut"></div>
                 <div class="container cut">
                   <div class="drop cut2"></div>
                 </div>
                 <div class="list">
                   <ul>
-                    <li id="attention" onmouseover="change0_1()" onmouseleave="change0_0()">
-                      <img src="photo/未关注.png" id="no_attention" width="25px" height="25px">
-                      <img src="photo/已关注.png" id="al_attention" width="25px" height="25px" style="display: none">
+                    <li id="attention" @mouseover="change0_1()" @mouseleave="change0_0()">
+                      <img src="./photo/未关注.png" id="no_attention" width="25px" height="25px">
+                      <img src="./photo/已关注.png" id="al_attention" width="25px" height="25px" style="display: none">
                       &nbsp;&nbsp;&nbsp;&nbsp;关注
                     </li>
-                    <li id="collection" onmouseover="change1_1()" onmouseleave="change1_0()">
-                      <img src="photo/未收藏.png" id="no_collection" width="25px" height="25px">
-                      <img src="photo/已收藏.png" id="al_collection" width="25px" height="25px" style="display: none">
+                    <li id="collection" @mouseover="change1_1()" @mouseleave="change1_0()">
+                      <img src="./photo/未收藏.png" id="no_collection" width="25px" height="25px">
+                      <img src="./photo/已收藏.png" id="al_collection" width="25px" height="25px" style="display: none">
                       &nbsp;&nbsp;&nbsp;&nbsp;收藏
                     </li>
-                    <li class="hide" onmouseover="change2_1()" onmouseleave="change2_0()">
-                      <img src="photo/未隐藏.png" id="no_hide" width="35px" height="34px">
-                      <img src="photo/已隐藏.png" id="al_hide" width="28px" height="22px" style="display: none">
+                    <li class="hide" @mouseover="change2_1()" @mouseleave="change2_0()">
+                      <img src="./photo/未隐藏.png" id="no_hide" width="35px" height="34px">
+                      <img src="./photo/已隐藏.png" id="al_hide" width="28px" height="22px" style="display: none">
                       &nbsp;&nbsp;&nbsp;隐藏
                     </li>
-                    <li class="report" onmouseover="change3_1()" onmouseleave="change3_0()">
-                      <img src="photo/未举报.png" id="no_report" width="25px" height="25px">
-                      <img src="photo/已举报.png" id="al_report" width="25px" height="22px" style="display: none">
+                    <li class="report" @mouseover="change3_1()" @mouseleave="change3_0()">
+                      <img src="./photo/未举报.png" id="no_report" width="25px" height="25px">
+                      <img src="./photo/已举报.png" id="al_report" width="25px" height="22px" style="display: none">
                       &nbsp;&nbsp;&nbsp;&nbsp;举报
                     </li>
                   </ul>
                 </div>
                 <div class="dot"></div>
               </div>
+              <div class="cursor"
+                   onclick="document.querySelector('.dots').classList.toggle('active');">
+              </div>
               <div class="substance">
                 <div class="substance1"></div>
               </div>
-              <button class="praise" x-data="{
-                                          state: 'Unliked',
-                                          usedKeyboard: false,
-                                          async updateState(to) {
-                                              this.state = 'Saving'
-                                              await new Promise(resolve => setTimeout(resolve, 1000))
-                                              this.state = to
-                                          }
-                                        }"
-                      :class="{
-                                          'like unliked': state === 'Unliked',
-                                          'like saving': state === 'Saving',
-                                          'like liked': state === 'Liked',
-                                          'focus:outline-none': !usedKeyboard
-                                        }"
-                      @click="updateState(state === 'Unliked' ? 'Liked' : 'Unliked')" @keydown.window.tab="usedKeyboard = true">
-                <span class="like-icon like-icon-state" aria-label="state" x-text="state" aria-live="polite">Unliked</span>
-              </button>
+                <a-button type="primary" class="button" style="height: 50px;margin-top: 10px;margin-left: 800px"  @click="clickBtn()">
+                  <div class="emitter"></div>
+                  <div class="hand">
+                    <div class="thumb"></div>
+                  </div>
+                  <span>{{btnText}}</span>
+                </a-button>
             </div>
             <div class="all">
               all
@@ -151,33 +184,43 @@
         </div>
       </div>
     </div>
+<!--    <div v-show="leftShow" @click="sw()">额哇饿啊伟大的</div>-->
   </div>
+
 </template>
 
+<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
 <script>
 
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e=e||self).Alpine=t()}(this,function(){"use strict";function e(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function t(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),n.push.apply(n,i)}return n}function n(n){for(var i=1;i<arguments.length;i++){var r=null!=arguments[i]?arguments[i]:{};i%2?t(Object(r),!0).forEach(function(t){e(n,t,r[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(n,Object.getOwnPropertyDescriptors(r)):t(Object(r)).forEach(function(e){Object.defineProperty(n,e,Object.getOwnPropertyDescriptor(r,e))})}return n}function i(e){return Array.from(new Set(e))}function r(){return navigator.userAgent.includes("Node.js")||navigator.userAgent.includes("jsdom")}function s(e,t){"template"!==e.tagName.toLowerCase()?console.warn(`Alpine: [${t}] directive should only be added to <template> tags. See https://github.com/alpinejs/alpine#${t}`):1!==e.content.childElementCount&&console.warn(`Alpine: <template> tag with [${t}] encountered with multiple element roots. Make sure <template> only has a single child node.`)}function a(e){return e.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g,(e,t)=>t.toUpperCase())}function o(e,t){var n;return function(){var i=this,r=arguments;clearTimeout(n),n=setTimeout(function(){n=null,e.apply(i,r)},t)}}function l(e,t,n={}){return"function"==typeof e?e.call(t):new Function(["$data",...Object.keys(n)],`var __alpine_result; with($data) { __alpine_result = ${e} }; return __alpine_result`)(t,...Object.values(n))}const c=/^x-(on|bind|data|text|html|model|if|for|show|cloak|transition|ref|spread)\b/;function u(e){const t=m(e.name);return c.test(t)}function d(e,t,n){let i=Array.from(e.attributes).filter(u).map(f),r=i.filter(e=>"spread"===e.type)[0];if(r){let e=l(r.expression,t.$data);i=i.concat(Object.entries(e).map(([e,t])=>f({name:e,value:t})))}return n?i.filter(e=>e.type===n):function(e){let t=["bind","model","show","catch-all"];return e.sort((e,n)=>{let i=-1===t.indexOf(e.type)?"catch-all":e.type,r=-1===t.indexOf(n.type)?"catch-all":n.type;return t.indexOf(i)-t.indexOf(r)})}(i)}function f({name:e,value:t}){const n=m(e),i=n.match(c),r=n.match(/:([a-zA-Z\-:]+)/),s=n.match(/\.[^.\]]+(?=[^\]]*$)/g)||[];return{type:i?i[1]:null,value:r?r[1]:null,modifiers:s.map(e=>e.replace(".","")),expression:t}}function m(e){return e.startsWith("@")?e.replace("@","x-on:"):e.startsWith(":")?e.replace(":","x-bind:"):e}function p(e,t=Boolean){return e.split(" ").filter(t)}const h="in",v="out";function b(e,t,n,i=!1){if(i)return t();if(e.__x_transition&&e.__x_transition.type===h)return;const r=d(e,n,"transition"),s=d(e,n,"show")[0];if(s&&s.modifiers.includes("transition")){let n=s.modifiers;if(n.includes("out")&&!n.includes("in"))return t();const i=n.includes("in")&&n.includes("out");(function(e,t,n){const i={duration:x(t,"duration",150),origin:x(t,"origin","center"),first:{opacity:0,scale:x(t,"scale",95)},second:{opacity:1,scale:100}};g(e,t,n,()=>{},i,h)})(e,n=i?n.filter((e,t)=>t<n.indexOf("out")):n,t)}else r.some(e=>["enter","enter-start","enter-end"].includes(e.value))?function(e,t,n,i){let r=n=>"function"==typeof n?t.evaluateReturnExpression(e,n):n;const s=p(r((n.find(e=>"enter"===e.value)||{expression:""}).expression)),a=p(r((n.find(e=>"enter-start"===e.value)||{expression:""}).expression)),o=p(r((n.find(e=>"enter-end"===e.value)||{expression:""}).expression));_(e,s,a,o,i,()=>{},h)}(e,n,r,t):t()}function y(e,t,n,i=!1){if(i)return t();if(e.__x_transition&&e.__x_transition.type===v)return;const r=d(e,n,"transition"),s=d(e,n,"show")[0];if(s&&s.modifiers.includes("transition")){let n=s.modifiers;if(n.includes("in")&&!n.includes("out"))return t();const i=n.includes("in")&&n.includes("out");(function(e,t,n,i){const r={duration:n?x(t,"duration",150):x(t,"duration",150)/2,origin:x(t,"origin","center"),first:{opacity:1,scale:100},second:{opacity:0,scale:x(t,"scale",95)}};g(e,t,()=>{},i,r,v)})(e,n=i?n.filter((e,t)=>t>n.indexOf("out")):n,i,t)}else r.some(e=>["leave","leave-start","leave-end"].includes(e.value))?function(e,t,n,i){const r=p((n.find(e=>"leave"===e.value)||{expression:""}).expression),s=p((n.find(e=>"leave-start"===e.value)||{expression:""}).expression),a=p((n.find(e=>"leave-end"===e.value)||{expression:""}).expression);_(e,r,s,a,()=>{},i,v)}(e,0,r,t):t()}function x(e,t,n){if(-1===e.indexOf(t))return n;const i=e[e.indexOf(t)+1];if(!i)return n;if("scale"===t&&!E(i))return n;if("duration"===t){let e=i.match(/([0-9]+)ms/);if(e)return e[1]}return"origin"===t&&["top","right","left","center","bottom"].includes(e[e.indexOf(t)+2])?[i,e[e.indexOf(t)+2]].join(" "):i}function g(e,t,n,i,r,s){e.__x_transition&&(cancelAnimationFrame(e.__x_transition.nextFrame),e.__x_transition.callback&&e.__x_transition.callback());const a=e.style.opacity,o=e.style.transform,l=e.style.transformOrigin,c=!t.includes("opacity")&&!t.includes("scale"),u=c||t.includes("opacity"),d=c||t.includes("scale"),f={start(){u&&(e.style.opacity=r.first.opacity),d&&(e.style.transform=`scale(${r.first.scale/100})`)},during(){d&&(e.style.transformOrigin=r.origin),e.style.transitionProperty=[u?"opacity":"",d?"transform":""].join(" ").trim(),e.style.transitionDuration=`${r.duration/1e3}s`,e.style.transitionTimingFunction="cubic-bezier(0.4, 0.0, 0.2, 1)"},show(){n()},end(){u&&(e.style.opacity=r.second.opacity),d&&(e.style.transform=`scale(${r.second.scale/100})`)},hide(){i()},cleanup(){u&&(e.style.opacity=a),d&&(e.style.transform=o),d&&(e.style.transformOrigin=l),e.style.transitionProperty=null,e.style.transitionDuration=null,e.style.transitionTimingFunction=null}};w(e,f,s)}function _(e,t,n,i,r,s,a){e.__x_transition&&(cancelAnimationFrame(e.__x_transition.nextFrame),e.__x_transition.callback&&e.__x_transition.callback());const o=e.__x_original_classes||[],l={start(){e.classList.add(...n)},during(){e.classList.add(...t)},show(){r()},end(){e.classList.remove(...n.filter(e=>!o.includes(e))),e.classList.add(...i)},hide(){s()},cleanup(){e.classList.remove(...t.filter(e=>!o.includes(e))),e.classList.remove(...i.filter(e=>!o.includes(e)))}};w(e,l,a)}function w(e,t,n){e.__x_transition={type:n,callback:O(()=>{t.hide(),e.isConnected&&t.cleanup(),delete e.__x_transition}),nextFrame:null},t.start(),t.during(),e.__x_transition.nextFrame=requestAnimationFrame(()=>{let n=1e3*Number(getComputedStyle(e).transitionDuration.replace(/,.*/,"").replace("s",""));0===n&&(n=1e3*Number(getComputedStyle(e).animationDuration.replace("s",""))),t.show(),e.__x_transition.nextFrame=requestAnimationFrame(()=>{t.end(),setTimeout(e.__x_transition.callback,n)})})}function E(e){return!isNaN(e)}function O(e){let t=!1;return function(){t||(t=!0,e.apply(this,arguments))}}function k(e,t,i,r,a){s(t,"x-for");let o=A("function"==typeof i?e.evaluateReturnExpression(t,i):i),l=function(e,t,n,i){let r=d(t,e,"if")[0];if(r&&!e.evaluateReturnExpression(t,r.expression))return[];return e.evaluateReturnExpression(t,n.items,i)}(e,t,o,a),c=t;l.forEach((i,s)=>{let u=function(e,t,i,r,s){let a=s?n({},s):{};a[e.item]=t,e.index&&(a[e.index]=i);e.collection&&(a[e.collection]=r);return a}(o,i,s,l,a()),f=function(e,t,n,i){let r=d(t,e,"bind").filter(e=>"key"===e.value)[0];return r?e.evaluateReturnExpression(t,r.expression,()=>i):n}(e,t,s,u),m=function(e,t){if(!e)return;if(e.__x_for_key===t)return e;let n=e;for(;n;){if(n.__x_for_key===t)return n.parentElement.insertBefore(n,e);n=!(!n.nextElementSibling||void 0===n.nextElementSibling.__x_for_key)&&n.nextElementSibling}}(c.nextElementSibling,f);m?(delete m.__x_for_key,m.__x_for=u,e.updateElements(m,()=>m.__x_for)):(b(m=function(e,t){let n=document.importNode(e.content,!0);return t.parentElement.insertBefore(n,t.nextElementSibling),t.nextElementSibling}(t,c),()=>{},e,r),m.__x_for=u,e.initializeElements(m,()=>m.__x_for)),(c=m).__x_for_key=f}),function(e,t){var n=!(!e.nextElementSibling||void 0===e.nextElementSibling.__x_for_key)&&e.nextElementSibling;for(;n;){let e=n,i=n.nextElementSibling;y(n,()=>{e.remove()},t),n=!(!i||void 0===i.__x_for_key)&&i}}(c,e)}function A(e){let t=/,([^,\}\]]*)(?:,([^,\}\]]*))?$/,n=e.match(/([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/);if(!n)return;let i={};i.items=n[2].trim();let r=n[1].trim().replace(/^\(|\)$/g,""),s=r.match(t);return s?(i.item=r.replace(t,"").trim(),i.index=s[1].trim(),s[2]&&(i.collection=s[2].trim())):i.item=r,i}function S(e,t,n,r,s,o,l){var c=e.evaluateReturnExpression(t,r,s);if("value"===n)if(void 0===c&&r.match(/\./).length&&(c=""),"radio"===t.type)void 0===t.attributes.value&&"bind"===o?t.value=c:"bind"!==o&&(t.checked=t.value==c);else if("checkbox"===t.type)"string"==typeof c&&"bind"===o?t.value=c:"bind"!==o&&(Array.isArray(c)?t.checked=c.some(e=>e==t.value):t.checked=!!c);else if("SELECT"===t.tagName)!function(e,t){const n=[].concat(t).map(e=>e+"");Array.from(e.options).forEach(e=>{e.selected=n.includes(e.value||e.text)})}(t,c);else{if(t.value===c)return;t.value=c}else if("class"===n)if(Array.isArray(c)){const e=t.__x_original_classes||[];t.setAttribute("class",i(e.concat(c)).join(" "))}else if("object"==typeof c){Object.keys(c).sort((e,t)=>c[e]-c[t]).forEach(e=>{c[e]?p(e).forEach(e=>t.classList.add(e)):p(e).forEach(e=>t.classList.remove(e))})}else{const e=t.__x_original_classes||[],n=p(c);t.setAttribute("class",i(e.concat(n)).join(" "))}else n=l.includes("camel")?a(n):n,[null,void 0,!1].includes(c)?t.removeAttribute(n):!function(e){return["disabled","checked","required","readonly","hidden","open","selected","autofocus","itemscope","multiple","novalidate","allowfullscreen","allowpaymentrequest","formnovalidate","autoplay","controls","loop","muted","playsinline","default","ismap","reversed","async","defer","nomodule"].includes(e)}(n)?$(t,n,c):$(t,n,n)}function $(e,t,n){e.getAttribute(t)!=n&&e.setAttribute(t,n)}function P(e,t,n,i,r,s={}){const l={passive:i.includes("passive")};if(i.includes("camel")&&(n=a(n)),i.includes("away")){let a=o=>{t.contains(o.target)||t.offsetWidth<1&&t.offsetHeight<1||(C(e,r,o,s),i.includes("once")&&document.removeEventListener(n,a,l))};document.addEventListener(n,a,l)}else{let a=i.includes("window")?window:i.includes("document")?document:t,c=o=>{if(a!==window&&a!==document||document.body.contains(t)){if(!(function(e){return["keydown","keyup"].includes(e)}(n)&&function(e,t){let n=t.filter(e=>!["window","document","prevent","stop"].includes(e));if(n.includes("debounce")){let e=n.indexOf("debounce");n.splice(e,E((n[e+1]||"invalid-wait").split("ms")[0])?2:1)}if(0===n.length)return!1;if(1===n.length&&n[0]===D(e.key))return!1;const i=["ctrl","shift","alt","meta","cmd","super"].filter(e=>n.includes(e));if(n=n.filter(e=>!i.includes(e)),i.length>0){const t=i.filter(t=>("cmd"!==t&&"super"!==t||(t="meta"),e[`${t}Key`]));if(t.length===i.length&&n[0]===D(e.key))return!1}return!0}(o,i)||(i.includes("prevent")&&o.preventDefault(),i.includes("stop")&&o.stopPropagation(),i.includes("self")&&o.target!==t))){!1===C(e,r,o,s)?o.preventDefault():i.includes("once")&&a.removeEventListener(n,c,l)}}else a.removeEventListener(n,c,l)};if(i.includes("debounce")){let e=i[i.indexOf("debounce")+1]||"invalid-wait",t=E(e.split("ms")[0])?Number(e.split("ms")[0]):250;c=o(c,t)}a.addEventListener(n,c,l)}}function C(e,t,i,r){return e.evaluateCommandExpression(i.target,t,()=>n(n({},r()),{},{$event:i}))}function D(e){switch(e){case"/":return"slash";case" ":case"Spacebar":return"space";default:return e&&e.replace(/([a-z])([A-Z])/g,"$1-$2").replace(/[_\s]/,"-").toLowerCase()}}function j(e,t,n){return"radio"===e.type&&(e.hasAttribute("name")||e.setAttribute("name",n)),(n,i)=>{if(n instanceof CustomEvent&&n.detail)return n.detail;if("checkbox"===e.type){if(Array.isArray(i)){const e=t.includes("number")?T(n.target.value):n.target.value;return n.target.checked?i.concat([e]):i.filter(t=>t!==e)}return n.target.checked}if("select"===e.tagName.toLowerCase()&&e.multiple)return t.includes("number")?Array.from(n.target.selectedOptions).map(e=>{return T(e.value||e.text)}):Array.from(n.target.selectedOptions).map(e=>e.value||e.text);{const e=n.target.value;return t.includes("number")?T(e):t.includes("trim")?e.trim():e}}}function T(e){const t=e?parseFloat(e):null;return E(t)?t:e}const{isArray:L}=Array,{getPrototypeOf:N,create:R,defineProperty:z,defineProperties:F,isExtensible:M,getOwnPropertyDescriptor:I,getOwnPropertyNames:U,getOwnPropertySymbols:q,preventExtensions:B,hasOwnProperty:W}=Object,{push:K,concat:Z,map:G}=Array.prototype;function H(e){return void 0===e}function J(e){return"function"==typeof e}const Q=new WeakMap;function V(e,t){Q.set(e,t)}const X=e=>Q.get(e)||e;function Y(e,t){return e.valueIsObservable(t)?e.getProxy(t):t}function ee(e,t,n){Z.call(U(n),q(n)).forEach(i=>{let r=I(n,i);r.configurable||(r=ue(e,r,Y)),z(t,i,r)}),B(t)}class te{constructor(e,t){this.originalTarget=t,this.membrane=e}get(e,t){const{originalTarget:n,membrane:i}=this,r=n[t],{valueObserved:s}=i;return s(n,t),i.getProxy(r)}set(e,t,n){const{originalTarget:i,membrane:{valueMutated:r}}=this;return i[t]!==n?(i[t]=n,r(i,t)):"length"===t&&L(i)&&r(i,t),!0}deleteProperty(e,t){const{originalTarget:n,membrane:{valueMutated:i}}=this;return delete n[t],i(n,t),!0}apply(e,t,n){}construct(e,t,n){}has(e,t){const{originalTarget:n,membrane:{valueObserved:i}}=this;return i(n,t),t in n}ownKeys(e){const{originalTarget:t}=this;return Z.call(U(t),q(t))}isExtensible(e){const t=M(e);if(!t)return t;const{originalTarget:n,membrane:i}=this,r=M(n);return r||ee(i,e,n),r}setPrototypeOf(e,t){}getPrototypeOf(e){const{originalTarget:t}=this;return N(t)}getOwnPropertyDescriptor(e,t){const{originalTarget:n,membrane:i}=this,{valueObserved:r}=this.membrane;r(n,t);let s=I(n,t);if(H(s))return s;const a=I(e,t);return H(a)?((s=ue(i,s,Y)).configurable||z(e,t,s),s):a}preventExtensions(e){const{originalTarget:t,membrane:n}=this;return ee(n,e,t),B(t),!0}defineProperty(e,t,n){const{originalTarget:i,membrane:r}=this,{valueMutated:s}=r,{configurable:a}=n;if(W.call(n,"writable")&&!W.call(n,"value")){const e=I(i,t);n.value=e.value}return z(i,t,function(e){return W.call(e,"value")&&(e.value=X(e.value)),e}(n)),!1===a&&z(e,t,ue(r,n,Y)),s(i,t),!0}}function ne(e,t){return e.valueIsObservable(t)?e.getReadOnlyProxy(t):t}class ie{constructor(e,t){this.originalTarget=t,this.membrane=e}get(e,t){const{membrane:n,originalTarget:i}=this,r=i[t],{valueObserved:s}=n;return s(i,t),n.getReadOnlyProxy(r)}set(e,t,n){return!1}deleteProperty(e,t){return!1}apply(e,t,n){}construct(e,t,n){}has(e,t){const{originalTarget:n,membrane:{valueObserved:i}}=this;return i(n,t),t in n}ownKeys(e){const{originalTarget:t}=this;return Z.call(U(t),q(t))}setPrototypeOf(e,t){}getOwnPropertyDescriptor(e,t){const{originalTarget:n,membrane:i}=this,{valueObserved:r}=i;r(n,t);let s=I(n,t);if(H(s))return s;const a=I(e,t);return H(a)?(s=ue(i,s,ne),W.call(s,"set")&&(s.set=void 0),s.configurable||z(e,t,s),s):a}preventExtensions(e){return!1}defineProperty(e,t,n){return!1}}function re(e){let t=void 0;return L(e)?t=[]:"object"==typeof e&&(t={}),t}const se=Object.prototype;function ae(e){if(null===e)return!1;if("object"!=typeof e)return!1;if(L(e))return!0;const t=N(e);return t===se||null===t||null===N(t)}const oe=(e,t)=>{},le=(e,t)=>{},ce=e=>e;function ue(e,t,n){const{set:i,get:r}=t;return W.call(t,"value")?t.value=n(e,t.value):(H(r)||(t.get=function(){return n(e,r.call(X(this)))}),H(i)||(t.set=function(t){i.call(X(this),e.unwrapProxy(t))})),t}class de{constructor(e){if(this.valueDistortion=ce,this.valueMutated=le,this.valueObserved=oe,this.valueIsObservable=ae,this.objectGraph=new WeakMap,!H(e)){const{valueDistortion:t,valueMutated:n,valueObserved:i,valueIsObservable:r}=e;this.valueDistortion=J(t)?t:ce,this.valueMutated=J(n)?n:le,this.valueObserved=J(i)?i:oe,this.valueIsObservable=J(r)?r:ae}}getProxy(e){const t=X(e),n=this.valueDistortion(t);if(this.valueIsObservable(n)){const i=this.getReactiveState(t,n);return i.readOnly===e?e:i.reactive}return n}getReadOnlyProxy(e){e=X(e);const t=this.valueDistortion(e);return this.valueIsObservable(t)?this.getReactiveState(e,t).readOnly:t}unwrapProxy(e){return X(e)}getReactiveState(e,t){const{objectGraph:n}=this;let i=n.get(t);if(i)return i;const r=this;return i={get reactive(){const n=new te(r,t),i=new Proxy(re(t),n);return V(i,e),z(this,"reactive",{value:i}),i},get readOnly(){const n=new ie(r,t),i=new Proxy(re(t),n);return V(i,e),z(this,"readOnly",{value:i}),i}},n.set(t,i),i}}class fe{constructor(e,t=null){this.$el=e;const n=this.$el.getAttribute("x-data"),i=""===n?"{}":n,r=this.$el.getAttribute("x-init");this.unobservedData=t?t.getUnobservedData():l(i,{$el:this.$el});let{membrane:s,data:a}=this.wrapDataInObservable(this.unobservedData);this.$data=a,this.membrane=s,this.unobservedData.$el=this.$el,this.unobservedData.$refs=this.getRefsProxy(),this.nextTickStack=[],this.unobservedData.$nextTick=(e=>{this.nextTickStack.push(e)}),this.watchers={},this.unobservedData.$watch=((e,t)=>{this.watchers[e]||(this.watchers[e]=[]),this.watchers[e].push(t)});let o=t?t.$el:this.$el;var c;Object.entries(me.magicProperties).forEach(([e,t])=>{Object.defineProperty(this.unobservedData,`$${e}`,{get:function(){return t(o)}})}),this.showDirectiveStack=[],this.showDirectiveLastElement,r&&!t&&(this.pauseReactivity=!0,c=this.evaluateReturnExpression(this.$el,r),this.pauseReactivity=!1),this.initializeElements(this.$el),this.listenForNewElementsToInitialize(),"function"==typeof c&&c.call(this.$data),t||setTimeout(()=>{me.onComponentInitializeds.forEach(e=>e(this))},0)}getUnobservedData(){return function(e,t){let n=e.unwrapProxy(t),i={};return Object.keys(n).forEach(e=>{["$el","$refs","$nextTick","$watch"].includes(e)||(i[e]=n[e])}),i}(this.membrane,this.$data)}wrapDataInObservable(e){var t=this;let n=o(function(){t.updateElements(t.$el)},0);return function(e,t){let n=new de({valueMutated(e,n){t(e,n)}});return{data:n.getProxy(e),membrane:n}}(e,(e,i)=>{t.watchers[i]?t.watchers[i].forEach(t=>t(e[i])):Object.keys(t.watchers).filter(e=>e.includes(".")).forEach(n=>{let r=n.split(".");i===r[r.length-1]&&r.reduce((r,s)=>(Object.is(e,r)&&t.watchers[n].forEach(t=>t(e[i])),r[s]),t.getUnobservedData())}),t.pauseReactivity||n()})}walkAndSkipNestedComponents(e,t,n=(()=>{})){!function e(t,n){if(!1===n(t))return;let i=t.firstElementChild;for(;i;)e(i,n),i=i.nextElementSibling}(e,e=>e.hasAttribute("x-data")&&!e.isSameNode(this.$el)?(e.__x||n(e),!1):t(e))}initializeElements(e,t=(()=>{})){this.walkAndSkipNestedComponents(e,e=>void 0===e.__x_for_key&&(void 0===e.__x_inserted_me&&void this.initializeElement(e,t)),e=>{e.__x=new fe(e)}),this.executeAndClearRemainingShowDirectiveStack(),this.executeAndClearNextTickStack(e)}initializeElement(e,t){e.hasAttribute("class")&&d(e,this).length>0&&(e.__x_original_classes=p(e.getAttribute("class"))),this.registerListeners(e,t),this.resolveBoundAttributes(e,!0,t)}updateElements(e,t=(()=>{})){this.walkAndSkipNestedComponents(e,e=>{if(void 0!==e.__x_for_key&&!e.isSameNode(this.$el))return!1;this.updateElement(e,t)},e=>{e.__x=new fe(e)}),this.executeAndClearRemainingShowDirectiveStack(),this.executeAndClearNextTickStack(e)}executeAndClearNextTickStack(e){e===this.$el&&this.nextTickStack.length>0&&requestAnimationFrame(()=>{for(;this.nextTickStack.length>0;)this.nextTickStack.shift()()})}executeAndClearRemainingShowDirectiveStack(){this.showDirectiveStack.reverse().map(e=>new Promise(t=>{e(e=>{t(e)})})).reduce((e,t)=>e.then(()=>t.then(e=>e())),Promise.resolve(()=>{})),this.showDirectiveStack=[],this.showDirectiveLastElement=void 0}updateElement(e,t){this.resolveBoundAttributes(e,!1,t)}registerListeners(e,t){d(e,this).forEach(({type:i,value:r,modifiers:s,expression:a})=>{switch(i){case"on":P(this,e,r,s,a,t);break;case"model":!function(e,t,i,r,s){var a="select"===t.tagName.toLowerCase()||["checkbox","radio"].includes(t.type)||i.includes("lazy")?"change":"input";P(e,t,a,i,`${r} = rightSideOfExpression($event, ${r})`,()=>n(n({},s()),{},{rightSideOfExpression:j(t,i,r)}))}(this,e,s,a,t)}})}resolveBoundAttributes(e,t=!1,n){let i=d(e,this);if(void 0!==e.type&&"radio"===e.type){const e=i.findIndex(e=>"model"===e.type);e>-1&&i.push(i.splice(e,1)[0])}i.forEach(({type:r,value:a,modifiers:o,expression:l})=>{switch(r){case"model":S(this,e,"value",l,n,r,o);break;case"bind":if("template"===e.tagName.toLowerCase()&&"key"===a)return;S(this,e,a,l,n,r,o);break;case"text":var c=this.evaluateReturnExpression(e,l,n);!function(e,t,n){void 0===t&&n.match(/\./)&&(t=""),e.innerText=t}(e,c,l);break;case"html":!function(e,t,n,i){t.innerHTML=e.evaluateReturnExpression(t,n,i)}(this,e,l,n);break;case"show":c=this.evaluateReturnExpression(e,l,n);!function(e,t,n,i,r=!1){const s=()=>{t.style.display="none"},a=()=>{1===t.style.length&&"none"===t.style.display?t.removeAttribute("style"):t.style.removeProperty("display")};if(!0===r)return void(n?a():s());const o=i=>{n?(("none"===t.style.display||t.__x_transition)&&b(t,()=>{a()},e),i(()=>{})):"none"!==t.style.display?y(t,()=>{i(()=>{s()})},e):i(()=>{})};i.includes("immediate")?o(e=>e()):(e.showDirectiveLastElement&&!e.showDirectiveLastElement.contains(t)&&e.executeAndClearRemainingShowDirectiveStack(),e.showDirectiveStack.push(o),e.showDirectiveLastElement=t)}(this,e,c,o,t);break;case"if":if(i.some(e=>"for"===e.type))return;c=this.evaluateReturnExpression(e,l,n);!function(e,t,n,i,r){s(t,"x-if");const a=t.nextElementSibling&&!0===t.nextElementSibling.__x_inserted_me;if(!n||a&&!t.__x_transition)!n&&a&&y(t.nextElementSibling,()=>{t.nextElementSibling.remove()},e,i);else{const n=document.importNode(t.content,!0);t.parentElement.insertBefore(n,t.nextElementSibling),b(t.nextElementSibling,()=>{},e,i),e.initializeElements(t.nextElementSibling,r),t.nextElementSibling.__x_inserted_me=!0}}(this,e,c,t,n);break;case"for":k(this,e,l,t,n);break;case"cloak":e.removeAttribute("x-cloak")}})}evaluateReturnExpression(e,t,i=(()=>{})){return l(t,this.$data,n(n({},i()),{},{$dispatch:this.getDispatchFunction(e)}))}evaluateCommandExpression(e,t,i=(()=>{})){return function(e,t,n={}){if("function"==typeof e)return e.call(t,n.$event);if(Object.keys(t).includes(e)){let i=new Function(["dataContext",...Object.keys(n)],`with(dataContext) { return ${e} }`)(t,...Object.values(n));if("function"==typeof i)return i.call(t,n.$event)}return new Function(["dataContext",...Object.keys(n)],`with(dataContext) { ${e} }`)(t,...Object.values(n))}(t,this.$data,n(n({},i()),{},{$dispatch:this.getDispatchFunction(e)}))}getDispatchFunction(e){return(t,n={})=>{e.dispatchEvent(new CustomEvent(t,{detail:n,bubbles:!0}))}}listenForNewElementsToInitialize(){const e=this.$el;new MutationObserver(e=>{for(let t=0;t<e.length;t++){const n=e[t].target.closest("[x-data]");if(n&&n.isSameNode(this.$el)){if("attributes"===e[t].type&&"x-data"===e[t].attributeName){const n=l(e[t].target.getAttribute("x-data")||"{}",{$el:this.$el});Object.keys(n).forEach(e=>{this.$data[e]!==n[e]&&(this.$data[e]=n[e])})}e[t].addedNodes.length>0&&e[t].addedNodes.forEach(e=>{1!==e.nodeType||e.__x_inserted_me||(!e.matches("[x-data]")||e.__x?this.initializeElements(e):e.__x=new fe(e))})}}}).observe(e,{childList:!0,attributes:!0,subtree:!0})}getRefsProxy(){var e=this;return new Proxy({},{get(t,n){return"$isAlpineProxy"===n||(e.walkAndSkipNestedComponents(e.$el,e=>{e.hasAttribute("x-ref")&&e.getAttribute("x-ref")===n&&(i=e)}),i);var i}})}}const me={version:"2.5.0",pauseMutationObserver:!1,magicProperties:{},onComponentInitializeds:[],start:async function(){r()||await new Promise(e=>{"loading"==document.readyState?document.addEventListener("DOMContentLoaded",e):e()}),this.discoverComponents(e=>{this.initializeComponent(e)}),document.addEventListener("turbolinks:load",()=>{this.discoverUninitializedComponents(e=>{this.initializeComponent(e)})}),this.listenForNewUninitializedComponentsAtRunTime(e=>{this.initializeComponent(e)})},discoverComponents:function(e){document.querySelectorAll("[x-data]").forEach(t=>{e(t)})},discoverUninitializedComponents:function(e,t=null){const n=(t||document).querySelectorAll("[x-data]");Array.from(n).filter(e=>void 0===e.__x).forEach(t=>{e(t)})},listenForNewUninitializedComponentsAtRunTime:function(e){const t=document.querySelector("body");new MutationObserver(e=>{if(!this.pauseMutationObserver)for(let t=0;t<e.length;t++)e[t].addedNodes.length>0&&e[t].addedNodes.forEach(e=>{1===e.nodeType&&(e.parentElement&&e.parentElement.closest("[x-data]")||this.discoverUninitializedComponents(e=>{this.initializeComponent(e)},e.parentElement))})}).observe(t,{childList:!0,attributes:!0,subtree:!0})},initializeComponent:function(e){if(!e.__x)try{e.__x=new fe(e)}catch(e){setTimeout(()=>{throw e},0)}},clone:function(e,t){t.__x||(t.__x=new fe(t,e))},addMagicProperty:function(e,t){this.magicProperties[e]=t},onComponentInitialized:function(e){this.onComponentInitializeds.push(e)}};return r()||(window.Alpine=me,window.deferLoadingAlpine?window.deferLoadingAlpine(function(){window.Alpine.start()}):window.Alpine.start()),me});
+export default {
 
 
-
-    export default {
-
-
-        data() {
+  data() {
             return {
-
+              leftShow: true,
+              btnText:  "like"
             }
         },
         methods: {
+
             hello: function() {
                 console.log("sayhello")
             },
             hello1: function() {
                 console.log("sayhello1")
             },
-          tab(tabId,tabC)
+            sw: function () {
+              this.leftShow = false
+            },
+            clickBtn() {
+              this.btnText = this.btnText == "like" ? "liked" :"like"
+              // document.getElementsByName("button").style.color = "blue";
+            } ,
+
+
+    tab(tabId,tabC)
 {
-  for(i = 1;i <= 5;i++)
+  for(var i = 1;i <= 5;i++)
   {
     if("tabId"+i==tabId)
     {
@@ -245,20 +288,61 @@ change3_0()
   document.getElementById("no_report").style.display = "none";
   document.getElementById("al_report").style.display = "block";
 },
+
+chan1()
+{
+  // document.getElementById("second-1").animate({width:'toggle'},350);
+  document.getElementById("second-1").style.display = "none";
+  document.getElementById("toggle1").style.display = "none";
+  document.getElementById("toggle2").style.display = "block";
+  document.getElementById("third").style.margin = "64px 0 50px -135px";
+  document.getElementById("tabC1").style.border = "3px solid red";
+  document.getElementById("tabC2").style.border = "3px solid red";
+  document.getElementById("tabC3").style.border = "3px solid red";
+  document.getElementById("tabC4").style.border = "3px solid red";
+  document.getElementById("tabC5").style.border = "3px solid red";
+},
+
+chan2()
+{
+  // document.getElementById("second-1").animate({width:'toggle'},350);
+  document.getElementById("second-1").style.display = "block";
+  document.getElementById("toggle1").style.display = "block";
+  document.getElementById("toggle2").style.display = "none";
+  document.getElementById("third").style.margin = "64px 0 50px -55px";
+  document.getElementById("tabC1").style.borderStyle = "solid";
+  document.getElementById("tabC1").style.borderWidth = "3px 3px 3px 0px";
+  document.getElementById("tabC1").style.borderColor = "red";
+  document.getElementById("tabC2").style.borderStyle = "solid";
+  document.getElementById("tabC2").style.borderWidth = "3px 3px 3px 0px";
+  document.getElementById("tabC2").style.borderColor = "red";
+  document.getElementById("tabC3").style.borderStyle = "solid";
+  document.getElementById("tabC3").style.borderWidth = "3px 3px 3px 0px";
+  document.getElementById("tabC3").style.borderColor = "red";
+  document.getElementById("tabC4").style.borderStyle = "solid";
+  document.getElementById("tabC4").style.borderWidth = "3px 3px 3px 0px";
+  document.getElementById("tabC4").style.borderColor = "red";
+  document.getElementById("tabC5").style.borderStyle = "solid";
+  document.getElementById("tabC5").style.borderWidth = "3px 3px 3px 0px";
+  document.getElementById("tabC5").style.borderColor = "red";
+}
         },
 
-    }
+}
 </script>
 
 <style>
-  /*css代码*/
+
+/*css代码*/
+
+@import "http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
   .first
   {
     margin-left: -10px;
-    margin-top: -12px;
-    width: 1521px;
-    height: 75px;
+    margin-top: -35px;
+    width: 100%;
+    height: 80px;
     background: gainsboro;
     display: flex;
     -webkit-box-shadow: #666 0px 0px 10px;
@@ -270,7 +354,7 @@ change3_0()
   {
     margin-left: 40px;
     width: 200px;
-    height: 70px;
+    height: 80px;
 
   }
 
@@ -279,7 +363,7 @@ change3_0()
     margin-left: 150px;
     width: 600px;
     height: 70px;
-    margin-top: 5px;
+    margin-top: 8px;
     /*background: #FF6600;*/
   }
 
@@ -322,7 +406,7 @@ change3_0()
     cursor: pointer;
     position: absolute;
     background: none;
-    top: 3px;
+    top: 0px;
     right: 3px;
   }
 
@@ -337,7 +421,7 @@ change3_0()
   {
     margin-left: 80px;
     width: 120px;
-    height: 70px;
+    height: 80px;
     text-align: center;
   }
 
@@ -361,8 +445,8 @@ change3_0()
     margin-top: 10px;
     border-bottom: 2px solid #181818;
     border-top: 2px solid #303030;
-    min-width: 100px;
-    height: 70px;
+    min-width: 120px;
+    height: 80px;
   }
 
   .menu > li
@@ -374,18 +458,51 @@ change3_0()
 
   .first-3 h4
   {
-    margin-top: 5px;
+    margin-top: 16px;
+    font-size: 17px;
+    color: #808080;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    height: 33px;
+  }
+
+  .first-5 h3
+  {
+    margin-top: 16px;
+    font-size: 17px;
+    color: #808080;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    height: 33px;
+  }
+
+  .submenu h5
+  {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #808080;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
   }
 
   .menu > li:first-child
   {
-    border-radius: 5px 0 0;
+    border-radius: 5px;
   }
 
   .menu a
   {
     border-left: 2px solid rgba(0, 0, 0, 0);
-    color: #808080;
     display: block;
     font-family: 'Lucida Console';
     text-decoration: none;
@@ -403,17 +520,26 @@ change3_0()
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b')";
     background: linear-gradient(#1c1c1c, #1b1b1b);
-
     border-bottom: 2px solid #222222;
     border-top: 2px solid #1B1B1B;
+    cursor: pointer;
   }
 
   .menu li:hover > a
   {
     border-radius: 0 0 0 0;
     border-left: 2px solid #C4302B;
-    color: #C4302B;
   }
+
+.menu li:hover h4
+{
+  color: #C4302B;
+}
+
+.menu li:hover h3
+{
+  color: #C4302B;
+}
 
   .submenu
   {
@@ -440,7 +566,7 @@ change3_0()
     -ms-transform: rotateY(90deg);
     -o-transform: rotateY(90deg);
     transform: rotateY(90deg);
-    height: 50px;
+    height: 60px;
     -webkit-transition: opacity .4s, -webkit-transform .5s;
     -moz-transition: opacity .4s, -moz-transform .5s;
     -ms-transition: opacity .4s, -ms-transform .5s;
@@ -449,7 +575,7 @@ change3_0()
     text-align: center;
   }
 
-  .menu .submenu li:hover a
+  .menu .submenu li:hover h5
   {
     border-left: 2px solid #454545;
     border-radius: 0;
@@ -582,27 +708,40 @@ change3_0()
 
   .first-4
   {
-    margin-left: 80px;
-    width: 70px;
+    margin-left: 20px;
+    width: 80px;
     height: 70px;
-    background: #17ff23;
+    /*background: #17ff23;*/
   }
+
+.first-4 h3
+{
+  margin-top: 16px;
+  font-size: 17px;
+  color: #808080;
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  height: 33px;
+}
 
   .first-5
   {
-    margin-left: 0px;
+    margin-left: 60px;
     width: 70px;
     height: 70px;
-    background: #17ff23;
   }
 
   .main
   {
-    width: 1521px;
-    margin-left: -10px;
+    width: 100%;
+    margin-left: 0px;
     height: 900px;
     background: white;
-    margin-top: 20px;
+    margin-top: -90px;
     display: flex;
     text-align: center;
   }
@@ -610,7 +749,7 @@ change3_0()
   .second
   {
     width: 300px;
-    height: 704px;
+    height: 700px;
     /*position: fixed;*/
     display: flex;
     margin-top: 64px;
@@ -622,10 +761,7 @@ change3_0()
     float: left;
     padding: 0px;
     margin: 0px;
-
     background: url("photo/dot.jpg") repeat-y right;
-    /*background: #17ff23;*/
-
   }
 
   .mainNav
@@ -639,7 +775,7 @@ change3_0()
   .mainNav ul
   {
     list-style: none;
-    height: 25px;
+    height: 40px;
     display: block;
     margin-top: -5px;
     padding-top: 10px;
@@ -678,7 +814,9 @@ change3_0()
     transition: .5s;
     transform-origin: 50% 0;
     transform-style: preserve-3d;
-    width: 6em;
+    width: 9em;
+    height: 3.5em;
+    margin-left: 10px;
   }
 
   .mainNav a:after
@@ -747,7 +885,7 @@ change3_0()
   {
     display:block;
     color:red;
-    background-color: white;
+    background: url("./photo/background3.png");
     border-right:0px solid red;
     border-left:3px solid red;
     border-top:3px solid red;
@@ -776,7 +914,7 @@ change3_0()
   .show::-webkit-scrollbar-thumb
   {
     border-radius: 10px;
-    background: skyblue;
+    background: #87ceeb;
     background-image: -webkit-linear-gradient(
       45deg,
       rgba(255,255,255,0.2) 25%,
@@ -835,9 +973,16 @@ change3_0()
     display:block;
   }
 
-  .con
+  .con1
   {
     margin-top: -10px;
+    padding:10px;
+    background: url("photo/background3.png");
+  }
+
+  .con
+  {
+    margin-top: 0px;
     padding:10px;
     background: url("photo/background3.png");
   }
@@ -872,7 +1017,7 @@ change3_0()
   {
     margin-top: 64px;
     float: left;
-    height: 700px;
+    height: 720px;
     width: 1200px;
     background: white;
     margin-left: -55px;
@@ -881,11 +1026,35 @@ change3_0()
   #tabC1
   {
     padding-top: 10px;
-    height: 690px;
+    height: 700px;
     width: 1200px;
     overflow-x: auto;
     overflow-y: auto;
   }
+
+.all_first
+{
+  font-family: sans-serif;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  max-width: 1000px;
+  min-height: 200px;
+  padding: 2rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(darkturquoise), to(aquamarine));
+  background: linear-gradient(darkturquoise, aquamarine);
+  --step: calc(30% / 8.25);
+  -webkit-mask-image: conic-gradient(from -90deg at 1.5rem 1.5rem, transparent var(--step), gold 0, gold calc(var(--step) * 2), transparent 0, transparent calc(var(--step) * 3), gold 0, gold calc(var(--step) * 4), transparent 0, transparent calc(var(--step) * 5), gold 0, gold calc(var(--step) * 6), transparent 0, transparent calc(var(--step) * 7), gold 0, gold calc(var(--step) * 8)), conic-gradient(from 0deg at calc(100% - 1.5rem) 1.5rem, transparent var(--step), gold 0, gold calc(var(--step) * 2), transparent 0, transparent calc(var(--step) * 3), gold 0, gold calc(var(--step) * 4), transparent 0, transparent calc(var(--step) * 5), gold 0, gold calc(var(--step) * 6), transparent 0, transparent calc(var(--step) * 7), gold 0, gold calc(var(--step) * 8)), conic-gradient(from 180deg at 1.5rem calc(100% - 1.5rem), transparent var(--step), gold 0, gold calc(var(--step) * 2), transparent 0, transparent calc(var(--step) * 3), gold 0, gold calc(var(--step) * 4), transparent 0, transparent calc(var(--step) * 5), gold 0, gold calc(var(--step) * 6), transparent 0, transparent calc(var(--step) * 7), gold 0, gold calc(var(--step) * 8)), conic-gradient(from 90deg at calc(100% - 1.5rem) calc(100% - 1.5rem), transparent var(--step), gold 0, gold calc(var(--step) * 2), transparent 0, transparent calc(var(--step) * 3), gold 0, gold calc(var(--step) * 4), transparent 0, transparent calc(var(--step) * 5), gold 0, gold calc(var(--step) * 6), transparent 0, transparent calc(var(--step) * 7), gold 0, gold calc(var(--step) * 8));
+  mask-image: conic-gradient(from -90deg at 1.5rem 1.5rem, transparent var(--step), gold 0, gold calc(var(--step) * 2), transparent 0, transparent calc(var(--step) * 3), gold 0, gold calc(var(--step) * 4), transparent 0, transparent calc(var(--step) * 5), gold 0, gold calc(var(--step) * 6), transparent 0, transparent calc(var(--step) * 7), gold 0, gold calc(var(--step) * 8)), conic-gradient(from 0deg at calc(100% - 1.5rem) 1.5rem, transparent var(--step), gold 0, gold calc(var(--step) * 2), transparent 0, transparent calc(var(--step) * 3), gold 0, gold calc(var(--step) * 4), transparent 0, transparent calc(var(--step) * 5), gold 0, gold calc(var(--step) * 6), transparent 0, transparent calc(var(--step) * 7), gold 0, gold calc(var(--step) * 8)), conic-gradient(from 180deg at 1.5rem calc(100% - 1.5rem), transparent var(--step), gold 0, gold calc(var(--step) * 2), transparent 0, transparent calc(var(--step) * 3), gold 0, gold calc(var(--step) * 4), transparent 0, transparent calc(var(--step) * 5), gold 0, gold calc(var(--step) * 6), transparent 0, transparent calc(var(--step) * 7), gold 0, gold calc(var(--step) * 8)), conic-gradient(from 90deg at calc(100% - 1.5rem) calc(100% - 1.5rem), transparent var(--step), gold 0, gold calc(var(--step) * 2), transparent 0, transparent calc(var(--step) * 3), gold 0, gold calc(var(--step) * 4), transparent 0, transparent calc(var(--step) * 5), gold 0, gold calc(var(--step) * 6), transparent 0, transparent calc(var(--step) * 7), gold 0, gold calc(var(--step) * 8));
+  -webkit-mask-size: 51% 51%;
+  mask-size: 51% 51%;
+  -webkit-mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+  mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  border-radius: 1.5rem;
+}
 
   .all
   {
@@ -1326,7 +1495,7 @@ change3_0()
   {
     margin-top: 0;
     width: 100%;
-    height: 80px;
+    height: 70px;
     /*background: red;*/
   }
 
@@ -1334,8 +1503,12 @@ change3_0()
   {
     font-size: 20px;
     cursor: pointer;
-    margin-top: -58px;
+    margin-top: -56px;
     margin-left: 75px;
+  }
+  .personal img
+  {
+    cursor: pointer;
   }
 
   .name a
@@ -1360,6 +1533,7 @@ change3_0()
   .substance1
   {
     width: 85%;
+    margin-top: 30px;
     height: 200px;
     resize: none;
     margin-left: 60px;
@@ -1369,14 +1543,14 @@ change3_0()
   .praise
   {
     margin-top: 5px;
-    margin-left: 930px;
+    margin-left: 800px;
   }
 
   .dots
   {
     display: flex;
     margin-top: -70px;
-    margin-left: 860px;
+    margin-left: 827px;
     padding: 10px;
     width: 80px;
     height: 40px;
@@ -1435,7 +1609,7 @@ change3_0()
     left: 79.5%;
     position: absolute;
     transform: translateX(-50%);
-    top: 290px;
+    top: 350px;
     width: 200px;
   }
 
@@ -1503,11 +1677,476 @@ change3_0()
     transition-delay: 220ms;
   }
 
-  .dots.active .shadow
+  .dots.active
   {
     opacity: 1;
     transition: opacity 150ms 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
+
+
+
+
+.button
+{
+  --color: #F6F8FF;
+  --color-hover: #F6F8FF;
+  --color-active: #fff;
+  --icon: #E1E6F9;
+  --icon-hover: #ECEFFC;
+  --icon-active: #fff;
+  --background: #404660;
+  --background-hover: #393E57;
+  --background-active: #275EFE;
+  --shadow: rgba(0, 17, 119, 0.1);
+  display: block;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  border: 0;
+  background: none;
+  padding: 8px 20px 8px 24px;
+  border-radius: 9px;
+  line-height: 27px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color);
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: color .2s linear;
+  transition: color .2s linear;
+}
+
+.button:hover
+{
+  --icon: var(--icon-hover);
+  --color: var(--color-hover);
+  --background: var(--background-hover);
+}
+
+.button:active
+{
+  --scale: .95;
+}
+
+.button:not(.liked):hover
+{
+  --hand-rotate: 8deg;
+  --hand-thumb-1: -12deg;
+  --hand-thumb-2: 36deg;
+}
+
+.button.liked
+{
+  --span-x: 2px;
+  --span-d-o: 1;
+  --span-d-x: 0;
+  --icon: var(--icon-active);
+  --color: var(--color-active);
+  --background: var(--background-active);
+  --hand-name: hand;
+}
+
+.button:after
+{
+  content: '';
+  min-width: 103px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  -webkit-transition: background .2s linear, box-shadow .2s linear, -webkit-transform .2s;
+  transition: background .2s linear, box-shadow .2s linear, -webkit-transform .2s;
+  transition: background .2s linear, transform .2s, box-shadow .2s linear;
+  transition: background .2s linear, transform .2s, box-shadow .2s linear, -webkit-transform .2s;
+  -webkit-transform: scale(var(--scale, 1)) translateZ(0);
+  transform: scale(var(--scale, 1)) translateZ(0);
+  background: var(--background);
+  box-shadow: 0 4px 8px var(--shadow), 0 8px 20px var(--shadow);
+}
+
+.button .emitter
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateZ(-4px);
+  transform: translateZ(-4px);
+}
+
+.button .emitter div
+{
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /*background: var(--b, none);*/
+}
+
+.button .hand
+{
+  width: 11px;
+  height: 11px;
+  border-radius: 2px 0 0 0;
+  background: var(--icon);
+  margin: 10px 8px 0 0;
+  -webkit-transform-origin: -5px -1px;
+  transform-origin: -5px -1px;
+  -webkit-transition: background .2s linear, -webkit-transform .25s;
+  transition: background .2s linear, -webkit-transform .25s;
+  transition: transform .25s, background .2s linear;
+  transition: transform .25s, background .2s linear, -webkit-transform .25s;
+  -webkit-transform: rotate(var(--hand-rotate, 0deg)) translateZ(0);
+  transform: rotate(var(--hand-rotate, 0deg)) translateZ(0);
+  -webkit-animation: var(--hand-name, none) 0.5s linear;
+  animation: var(--hand-name, none) 0.5s linear;
+}
+
+.button .hand:before, .button .hand:after
+{
+  content: '';
+  background: var(--icon);
+  position: absolute;
+  -webkit-transition: background .2s linear, box-shadow .2s linear;
+  transition: background .2s linear, box-shadow .2s linear;
+}
+
+.button .hand:before
+{
+  left: -5px;
+  bottom: 0;
+  height: 12px;
+  width: 4px;
+  border-radius: 1px 1px 0 1px;
+}
+
+.button .hand:after
+{
+  right: -3px;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 0 2px 2px 0;
+  background: var(--icon);
+  box-shadow: -0.5px 4px 0 var(--icon), -1px 8px 0 var(--icon), -1.5px 12px 0 var(--icon);
+  -webkit-transform: scaleY(0.6825);
+  transform: scaleY(0.6825);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.button .hand .thumb
+{
+  background: var(--icon);
+  width: 10px;
+  height: 4px;
+  border-radius: 2px;
+  -webkit-transform-origin: 2px 2px;
+  transform-origin: 2px 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: background .2s linear, -webkit-transform .25s;
+  transition: background .2s linear, -webkit-transform .25s;
+  transition: transform .25s, background .2s linear;
+  transition: transform .25s, background .2s linear, -webkit-transform .25s;
+  -webkit-transform: scale(0.85) translateY(-0.5px) rotate(var(--hand-thumb-1, -45deg)) translateZ(0);
+  transform: scale(0.85) translateY(-0.5px) rotate(var(--hand-thumb-1, -45deg)) translateZ(0);
+}
+
+.button .hand .thumb:before
+{
+  content: '';
+  height: 4px;
+  width: 7px;
+  border-radius: 2px;
+  -webkit-transform-origin: 2px 2px;
+  transform-origin: 2px 2px;
+  background: var(--icon);
+  position: absolute;
+  left: 7px;
+  top: 0;
+  -webkit-transition: background .2s linear, -webkit-transform .25s;
+  transition: background .2s linear, -webkit-transform .25s;
+  transition: transform .25s, background .2s linear;
+  transition: transform .25s, background .2s linear, -webkit-transform .25s;
+  -webkit-transform: rotate(var(--hand-thumb-2, -45deg)) translateZ(0);
+  transform: rotate(var(--hand-thumb-2, -45deg)) translateZ(0);
+}
+
+.button .hand,
+.button span
+{
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button .hand span,
+.button span span
+{
+  opacity: var(--span-d-o, 0);
+  -webkit-transition: opacity .2s linear, -webkit-transform .25s;
+  transition: opacity .2s linear, -webkit-transform .25s;
+  transition: transform .25s, opacity .2s linear;
+  transition: transform .25s, opacity .2s linear, -webkit-transform .25s;
+  -webkit-transform: translateX(var(--span-d-x, 4px)) translateZ(0);
+  transform: translateX(var(--span-d-x, 4px)) translateZ(0);
+}
+
+.button > span
+{
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+  -webkit-transform: translateX(var(--span-x, 4px)) translateZ(0);
+  transform: translateX(var(--span-x, 4px)) translateZ(0);
+}
+
+@-webkit-keyframes hand
+{
+  30% {
+    -webkit-transform: rotate(-14deg) translateZ(0);
+    transform: rotate(-14deg) translateZ(0);
+  }
+  65% {
+    -webkit-transform: rotate(7deg) translateZ(0);
+    transform: rotate(7deg) translateZ(0);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) translateZ(0);
+    transform: rotate(0deg) translateZ(0);
+  }
+}
+
+@keyframes hand
+{
+  30% {
+    -webkit-transform: rotate(-14deg) translateZ(0);
+    transform: rotate(-14deg) translateZ(0);
+  }
+  65% {
+    -webkit-transform: rotate(7deg) translateZ(0);
+    transform: rotate(7deg) translateZ(0);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) translateZ(0);
+    transform: rotate(0deg) translateZ(0);
+  }
+}
+
+
+.all_cat
+{
+  display:flex;
+  justify-content:center;
+  /*align-items:center;*/
+  margin-top: 20px;
+  height:95vh;
+}
+
+.cat
+{
+  position: absolute;
+  width:200px;
+  height: 100px;
+  /*   margin: 20px auto; */
+  overflow: hidden;
+  /*background-color: #fff;*/
+}
+
+.cat img
+{
+  width:100%;
+  position:absolute;
+  left: calc(50% - 100px);
+  top: -50px;
+}
+
+.ears
+{
+  position:absolute;
+}
+
+.ear
+{
+  width:0;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-bottom:20px solid pink;
+  position: relative;
+}
+
+.eLeft
+{
+  left: -49px;
+  top: 14px;
+  transform: rotate(-48deg);
+}
+
+.eRight
+{
+  left: 49px;
+  top: -6px;
+  transform: rotate(48deg);
+}
+
+.eye
+{
+  position: absolute;
+  width:28px;
+  height:28px;
+  background-color: #071;
+  box-shadow: 5px 5px 6px #0f2 inset;
+  border-radius: 50%;
+  border: 1px solid #000;
+  top:41px;
+  overflow:hidden;
+  animation: eyesTrackShadow 1.5s ease-in-out infinite alternate;
+}
+.left {left: calc(55% - 35px);}
+.right {left: calc(55% + 6px);}
+
+.eyeWatch
+{
+  width: 7px;
+  height:20px;
+  background-color: #000;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-left:20px;
+  transform:rotate(25deg);
+  animation: trackIt 1.5s ease-in-out infinite alternate;
+  overflow:hidden;
+}
+
+.glare
+{
+  width:5px;
+  height:5px;
+  background-color: #fff;
+  border-radius:50%;
+  position:relative;
+  top:3px;
+  animation: light 1.5s ease-in-out infinite alternate;
+}
+
+.eyelids {
+  width:90px;
+  height:1px;
+  position:absolute;
+  z-index:1;
+  top:35px;
+  left: calc(50% - 45px);
+  background-color: #000;
+  animation: blink 6s ease-in-out infinite alternate;
+}
+
+.nose{
+  width:14px;
+  height:5px;
+  background-color: pink;
+  position:absolute;
+  top:70px;
+  border-radius:50% 50% 0 0;
+  left:calc(50% - 7px);
+}
+
+.claws{
+  width: 3px;
+  height: 10px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px #000;
+}
+
+.c1{top: 78px;left: 25px;transform:rotatez(25deg);}
+.c2{top: 83px;left: 41px;}
+.c3{top: 78px;left: 56px;transform:rotatez(-25deg);}
+.c4{top: 78px;right: 25px;transform:rotatez(-25deg);}
+.c5{top: 83px;right: 41px;}
+.c6{top: 78px;right: 56px;transform:rotatez(25deg);}
+
+.ballContainer {
+  width: 100%;
+  margin-top:140px;
+}
+
+.ball {
+  width:20px;
+  height:20px;
+  background-color: red;
+  box-shadow: 1px -1px 3px #000 inset;
+  border-radius: 50%;
+  position:absolute;
+  animation: ballLight 1.5s ease-in-out infinite alternate;
+}
+
+.ballShadow{
+  width:20px;
+  height:15px;
+  background-color: #000;
+  margin-left: calc(50% + 90px);
+  border-radius: 50%;
+  position:absolute;
+  box-shadow: 0 0 5px 2px #fff inset;
+  animation: ballRolling 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes trackIt {
+  from{
+    margin-left:21px;
+    transform:rotate(25deg);
+  }
+  to{
+    margin-left:0px;
+    transform:rotate(-25deg);
+  }
+}
+@keyframes eyesTrackShadow {
+  from{box-shadow: 5px 5px 6px #0f2 inset;}
+  to {box-shadow: -5px 5px 6px #0f2 inset;}
+}
+
+@keyframes light {
+  0%{transform: translateX(-2px);opacity:3;}
+  50%{opacity:1;}
+  100%{transform: translateX(4px);opacity:3;}
+}
+
+@keyframes blink {
+  0%{height: 1px;}
+  3%{height: 35px;}
+  4%{height: 1px;}
+  100%{height: 1px;}
+}
+
+@keyframes ballRolling {
+  0%{margin-left: calc(50% + 90px);}
+  100%{margin-left: calc(50% - 90px);}
+}
+
+@keyframes ballLight {
+  0%{
+    box-shadow: -1px -1px 3px #000 inset;
+    margin: -10px 0 0 -3px;
+  }
+  100%{
+    box-shadow: 1px -1px 3px #000 inset;
+    margin: -10px 0 0 3px;
+  }
+}
 
 
 </style>
